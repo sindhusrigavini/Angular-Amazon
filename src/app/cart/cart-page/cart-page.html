@@ -1,0 +1,66 @@
+<div class="cart-container">
+
+  <div class="cart-items">
+
+    <div class="cart-card" *ngFor="let item of cartItems">
+
+      <img [src]="item.image" class="product-img">
+
+      <div class="details">
+
+        <h3>{{item.name}}</h3>
+        <p class="price">₹{{item.price}}</p>
+
+        <div class="qty">
+
+          <button (click)="decrease(item)">-</button>
+
+          <span>{{item.quantity}}</span>
+
+          <button (click)="increase(item)">+</button>
+
+        </div>
+
+        <p class="total">
+          Item Total: ₹{{item.price * item.quantity}}
+        </p>
+
+        <button class="remove"
+                (click)="delete(item)">
+          Remove
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- BILL SUMMARY -->
+
+  <div class="summary">
+
+    <h2>Price Details</h2>
+
+    <div class="row">
+      <span>Total Items</span>
+      <span>{{cartItems.length}}</span>
+    </div>
+
+    <div class="row">
+      <span>Total Amount</span>
+      <span>₹{{totalAmount}}</span>
+    </div>
+
+    <hr>
+
+    <h3>Grand Total: ₹{{totalAmount}}</h3>
+
+   <button class="checkout" routerLink="/checkout">
+  Proceed to Checkout
+</button>
+
+  </div>
+
+</div>

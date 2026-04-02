@@ -1,0 +1,17 @@
+<div *ngFor="let order of orders">
+
+<h3>Order ID: {{order.orderId}}</h3>
+<p>Total: ₹{{order.total}}</p>
+<p>Status: {{order.status}}</p>
+
+<p>Expected Delivery:
+{{order.expectedDelivery | date:'mediumDate'}}
+</p>
+
+<button (click)="cancelOrder(order.orderId)">
+Cancel Order
+</button>
+
+<hr>
+
+</div>

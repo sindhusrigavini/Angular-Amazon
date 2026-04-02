@@ -1,0 +1,35 @@
+<div class="main">
+
+  <div class="sidebar">
+
+    <h3>Categories</h3>
+
+    <button (click)="showAll()">All</button>
+
+    <div *ngFor="let cat of categories">
+      <button (click)="filterByCategory(cat)">
+        {{ cat }}
+      </button>
+    </div>
+
+  </div>
+
+  <div class="product-container">
+
+    <div class="card" *ngFor="let item of filteredProducts">
+
+      <img [src]="item.image" />
+
+      <h3>{{ item.name }}</h3>
+
+      <p>₹{{ item.price }}</p>
+
+      <p>{{ item.category }}</p>
+
+      <button (click)="addToCart(item)">Add to Cart</button>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,71 @@
+<div class="checkout-container">
+
+  <!-- LEFT SIDE ADDRESS -->
+  <div class="address-box">
+
+    <h2>Delivery Details</h2>
+
+    <input type="text" placeholder="Full Name">
+    <input type="text" placeholder="Mobile Number">
+    <textarea placeholder="Full Address"></textarea>
+
+    <div class="row">
+      <input type="text" placeholder="City">
+      <input type="text" placeholder="State">
+    </div>
+
+    <input type="text" placeholder="Pincode">
+
+    <h3>Payment Method</h3>
+
+    <div class="payment-options">
+
+      <label class="pay-card">
+        <input type="radio" name="payment" value="UPI" [(ngModel)]="paymentType">
+        UPI Payment
+      </label>
+
+      <label class="pay-card">
+        <input type="radio" name="payment" value="Card" [(ngModel)]="paymentType">
+        Debit / Credit Card
+      </label>
+
+      <label class="pay-card">
+        <input type="radio" name="payment" value="COD" [(ngModel)]="paymentType">
+        Cash on Delivery
+      </label>
+
+    </div>
+
+  </div>
+
+
+  <!-- RIGHT SIDE SUMMARY -->
+  <div class="summary-box">
+
+    <h3>Price Details</h3>
+
+    <div class="price-row">
+      <span>Product Total</span>
+      <span>₹{{totalAmount}}</span>
+    </div>
+
+    <div class="price-row">
+      <span>Delivery Charges</span>
+      <span>₹40</span>
+    </div>
+
+    <hr>
+
+    <div class="grand-total">
+      <span>Total Payable</span>
+      <span>₹{{totalAmount + 40}}</span>
+    </div>
+
+    <button class="place-order-btn" (click)="payNow()">
+      Place Order
+    </button>
+
+  </div>
+
+</div>

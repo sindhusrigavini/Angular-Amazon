@@ -1,0 +1,22 @@
+<div class="success-box">
+
+  <h2>🎉 Order Placed Successfully</h2>
+
+  <div class="order-info">
+    <p><b>Order ID:</b> {{orderData?.orderId}}</p>
+    <p><b>Name:</b> {{orderData?.name}}</p>
+    <p><b>Phone:</b> {{orderData?.phone}}</p>
+    <p><b>Address:</b> {{orderData?.address}}, {{orderData?.city}} - {{orderData?.pincode}}</p>
+    <p><b>Total Amount:</b> ₹ {{orderData?.amount}}</p>
+    <p><b>Expected Delivery:</b> {{expectedDeliveryDate}}</p>
+  </div>
+
+  <h3>Ordered Products</h3>
+
+  <div class="product-card" *ngFor="let item of orderData?.products">
+    <p>{{item.name}}</p>
+    <p>Qty: {{item.quantity}}</p>
+    <p>Price: ₹ {{item.price}}</p>
+  </div>
+
+</div>
